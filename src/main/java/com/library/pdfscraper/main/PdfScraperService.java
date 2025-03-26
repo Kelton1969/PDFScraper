@@ -11,7 +11,6 @@ import com.library.pdfscraper.scraper.WebScraper;
 import com.library.pdfscraper.zip.ZipManager;
 
 @Service
-
 public class PdfScraperService {
 
     public void executeScraper(String downloadDirectory) {
@@ -27,6 +26,7 @@ public class PdfScraperService {
 
         if (pdfLinks.isEmpty()) return;
 
+        
         List<String> files = new ArrayList<>();
         for (int i = 0; i < pdfLinks.size(); i++) {
             String fileName = downloadDirectory + "/anexo_" + (i + 1) + ".pdf"; 
