@@ -11,7 +11,7 @@ public class ZipManager {
         try (ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(outputZip))) {
             for (String file : files) {
                 try (FileInputStream fis = new FileInputStream(file)) {
-                   
+              
                     zos.putNextEntry(new ZipEntry(new File(file).getName()));
                     byte[] buffer = new byte[1024];
                     int length;
@@ -25,6 +25,8 @@ public class ZipManager {
                 }
             }
             System.out.println("Arquivos compactados em: " + outputZip);
-        } 
+        } catch (IOException e) {
+            System.err.println("Erro ao criar o arquivo ZIP: " + e.getMessage());
+        }
     }
 }
