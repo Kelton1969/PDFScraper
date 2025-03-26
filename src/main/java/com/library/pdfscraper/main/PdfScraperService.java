@@ -11,6 +11,7 @@ import com.library.pdfscraper.scraper.WebScraper;
 import com.library.pdfscraper.zip.ZipManager;
 
 @Service
+
 public class PdfScraperService {
 
     public void executeScraper(String downloadDirectory) {
