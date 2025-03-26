@@ -17,7 +17,10 @@ public class PdfScraperApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // Chama o serviço de scraping assim que a aplicação iniciar
-        pdfScraperService.executeScraper();
+       
+        String downloadDirectory = "arquivos_baixados";
+        
+       
+        pdfScraperService.executeScraper(downloadDirectory);
     }
 }
