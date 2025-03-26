@@ -22,7 +22,15 @@ public class WebScraper {
             }
 
             for (Element link : links) {
-                pdfLinks.add(link.attr("abs:href"));
+                String linkText = link.text().toLowerCase();
+                if (linkText.contains("anexo i") || linkText.contains("anexo ii")) {
+                    pdfLinks.add(link.attr("abs:href"));
+                    System.out.println("PDF encontrado: " + linkText);
+                }
+            }
+
+            if (pdfLinks.isEmpty()) {
+                System.out.println("Anexos I e II não encontrados.");
             }
         } catch (IOException e) {
             System.err.println("Erro ao acessar a página: " + e.getMessage());
